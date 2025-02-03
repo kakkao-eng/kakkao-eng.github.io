@@ -37,6 +37,25 @@
             color: #333;
             font-weight: bold;
         }
+        .projects {
+            margin-top: 30px;
+        }
+        .project-item {
+            margin-bottom: 20px;
+        }
+        .animated-img {
+            width: 300px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -52,6 +71,20 @@
             <a href="https://github.com/kakkao-eng">GitHub</a>
             <a href="https://www.instagram.com/kakkao71/?hl=en">Instagram</a>
             <a href="https://www.facebook.com/thn.kr.sraththa.mak">facebook</a>
+        </div>
+        
+        <div class="projects">
+            <h2>2D Game Projects</h2>
+            <div class="project-item">
+                <h3>Project 1: Adventure Quest</h3>
+                <img src="game1.gif" alt="Adventure Quest" class="animated-img">
+                <p>A 2D action-adventure game with unique characters and immersive levels.</p>
+            </div>
+            <div class="project-item">
+                <h3>Project 2: Puzzle Master</h3>
+                <img src="game2.gif" alt="Puzzle Master" class="animated-img">
+                <p>A challenging 2D puzzle game that tests your logic and creativity.</p>
+            </div>
         </div>
     </div>
 </body>
