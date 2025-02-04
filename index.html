@@ -55,29 +55,39 @@
             border-radius: 10px;
             box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
-        .animated-img {
+        .carousel {
+            position: relative;
+            display: flex;
+            overflow: hidden;
             width: 100%;
             max-width: 800px;
-            height: auto;
-            display: block;
-            margin: 10px auto;
+            margin: auto;
             border-radius: 10px;
-        }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 10px;
-            padding: 10px;
-            white-space: nowrap;
-            scrollbar-width: none;
         }
         .carousel img {
-            scroll-snap-align: center;
             width: 100%;
-            max-width: 500px;
             height: auto;
-            border-radius: 10px;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        .carousel-btn.next {
+            right: 10px;
         }
     </style>
 </head>
@@ -101,15 +111,19 @@
             <div class="project-item">
                 <h3>Project 1: Adventure Quest</h3>
                 <div class="carousel">
-                    <img src="GIF/BUGAMENO_E.gif" alt="Adventure Quest">
+                    <button class="carousel-btn prev" onclick="prevSlide('carousel-1')">&#10094;</button>
+                    <img src="GIF/BUGAMENO_E.gif" class="active" id="carousel-1">
+                    <button class="carousel-btn next" onclick="nextSlide('carousel-1')">&#10095;</button>
                 </div>
                 <p>Follow you คือเกม Adventure-Horror ที่ผู้เล่นต้องพาเด็กสาวหนีปีศาจ พัฒนาโดยใช้ Unity</p>
             </div>
             <div class="project-item">
                 <h3>Project 2: Doodle Trails (2.5D)</h3>
                 <div class="carousel">
-                    <img src="GIF/GIF_2D.gif" alt="Doodle Trails">
-                    <img src="GIF/2D_2.gif" alt="Doodle Trails">
+                    <button class="carousel-btn prev" onclick="prevSlide('carousel-2')">&#10094;</button>
+                    <img src="GIF/GIF_2D.gif" class="active" id="carousel-2">
+                    <img src="GIF/2D_2.gif" id="carousel-2">
+                    <button class="carousel-btn next" onclick="nextSlide('carousel-2')">&#10095;</button>
                 </div>
                 <p>เกมในโลกของสมุดวาดรูปที่ซ่อนเรื่องราว ตัวละครหลักคือแพนกวิ้นน้อย พัฒนาโดยใช้ Unity</p>
             </div>
@@ -120,18 +134,31 @@
             <div class="project-item">
                 <h3>Project 1: God Fall</h3>
                 <div class="carousel">
-                    <img src="GIF/3D_1.gif" alt="God Fall">
+                    <button class="carousel-btn prev" onclick="prevSlide('carousel-3')">&#10094;</button>
+                    <img src="GIF/3D_1.gif" class="active" id="carousel-3">
+                    <button class="carousel-btn next" onclick="nextSlide('carousel-3')">&#10095;</button>
                 </div>
                 <p>An immersive open-world 3D game with exciting quests and stunning visuals.</p>
             </div>
-            <div class="project-item">
-                <h3>Project 2: Racing Challenge</h3>
-                <div class="carousel">
-                    <img src="GIF/3d_racing_challenge.gif" alt="Racing Challenge">
-                </div>
-                <p>A high-speed 3D racing game with realistic physics and dynamic tracks.</p>
-            </div>
         </div>
     </div>
+
+    <script>
+        function prevSlide(id) {
+            let images = document.querySelectorAll(`#${id}`);
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[activeIndex].classList.remove('active');
+            let newIndex = (activeIndex - 1 + images.length) % images.length;
+            images[newIndex].classList.add('active');
+        }
+        
+        function nextSlide(id) {
+            let images = document.querySelectorAll(`#${id}`);
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[activeIndex].classList.remove('active');
+            let newIndex = (activeIndex + 1) % images.length;
+            images[newIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
