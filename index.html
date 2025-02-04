@@ -6,23 +6,26 @@
     <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #1e1e1e;
             text-align: center;
+            color: white;
         }
         header {
-            background: #333;
+            background: #ff9800;
             color: white;
             padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: #2c2c2c;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -30,31 +33,57 @@
             width: 150px;
             border-radius: 50%;
             margin-top: 10px;
+            border: 3px solid #ff9800;
         }
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
-            color: #333;
+            color: #ff9800;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ffd54f;
         }
         .projects {
             margin-top: 30px;
         }
         .project-item {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            background: #3a3a3a;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
         .animated-img {
             width: 100%;
             max-width: 800px;
             height: auto;
             display: block;
-            margin: 0 auto;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .carousel img {
+            scroll-snap-align: center;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
+        My Portfolio
     </header>
     <div class="container">
         <img src="images/myphoto.jpg" alt="Profile Image" class="profile-img">
@@ -64,34 +93,42 @@
         <div class="social-links">
             <a href="https://github.com/kakkao-eng">GitHub</a>
             <a href="https://www.instagram.com/kakkao71/?hl=en">Instagram</a>
-            <a href="https://www.facebook.com/thn.kr.sraththa.mak">facebook</a>
+            <a href="https://www.facebook.com/thn.kr.sraththa.mak">Facebook</a>
         </div>
         
         <div class="projects">
             <h2>2D Game Projects</h2>
             <div class="project-item">
                 <h3>Project 1: Adventure Quest</h3>
-                <img src="GIF/BUGAMENO_E.gif" alt="Adventure Quest" class="animated-img">
-                <p>Follow you คือเกม Adventure-Horror ที่ผู้เล่นต้องพาเด็กสาวหนีปีศาจ ตัวเกมโฟกัสไปที่การสำรวจ แก้ไข Puzzle และเล่าเรื่องราวต่างๆที่ทำให้เด็กสาวคนนี้มองเห็นปีศาจที่คนอื่นมองไม่เห็น พัฒนาโดยใช้ Unity</p>
+                <div class="carousel">
+                    <img src="GIF/BUGAMENO_E.gif" alt="Adventure Quest">
+                </div>
+                <p>Follow you คือเกม Adventure-Horror ที่ผู้เล่นต้องพาเด็กสาวหนีปีศาจ พัฒนาโดยใช้ Unity</p>
             </div>
             <div class="project-item">
                 <h3>Project 2: Doodle Trails (2.5D)</h3>
-                <img src="GIF/GIF_2D.gif" alt="Puzzle Master" class="animated-img">
-                <img src="GIF/2D_2.gif" alt="Puzzle Master" class="animated-img">
-                <p>เกมนี้เกิดขึ้นในโลกของสมุดวาดรูปหรือสมุดโน้ต ที่ดูเหมือนเป็นสิ่งธรรมดา แต่เต็มไปด้วยเรื่องราวที่ซ่อนอยู่ ตัวละครหลักของเกมคือแพนกวิ้นน้อย ที่ถูกวาดขึ้นอย่างง่ายดายบนกระดาษ พัฒนาโดยใช้ Unity</p>
+                <div class="carousel">
+                    <img src="GIF/GIF_2D.gif" alt="Doodle Trails">
+                    <img src="GIF/2D_2.gif" alt="Doodle Trails">
+                </div>
+                <p>เกมในโลกของสมุดวาดรูปที่ซ่อนเรื่องราว ตัวละครหลักคือแพนกวิ้นน้อย พัฒนาโดยใช้ Unity</p>
             </div>
         </div>
         
         <div class="projects">
             <h2>3D Game Projects</h2>
             <div class="project-item">
-                <h3>Project 1: God fall</h3>
-                <img src="GIF/3D_1.gif" alt="3D Adventure World" class="animated-img">
+                <h3>Project 1: God Fall</h3>
+                <div class="carousel">
+                    <img src="GIF/3D_1.gif" alt="God Fall">
+                </div>
                 <p>An immersive open-world 3D game with exciting quests and stunning visuals.</p>
             </div>
             <div class="project-item">
                 <h3>Project 2: Racing Challenge</h3>
-                <img src="GIF/3d_racing_challenge.gif" alt="Racing Challenge" class="animated-img">
+                <div class="carousel">
+                    <img src="GIF/3d_racing_challenge.gif" alt="Racing Challenge">
+                </div>
                 <p>A high-speed 3D racing game with realistic physics and dynamic tracks.</p>
             </div>
         </div>
