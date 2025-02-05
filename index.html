@@ -127,6 +127,18 @@
                 </div>
                 <p>เกมในโลกของสมุดวาดรูปที่ซ่อนเรื่องราว ตัวละครหลักคือแพนกวิ้นน้อย พัฒนาโดยใช้ Unity</p>
             </div>
+            <div class="project-item">
+                <h3>Project 3: (Empty Slot)</h3>
+                <p>Coming Soon</p>
+            </div>
+            <div class="project-item">
+                <h3>Project 4: (Empty Slot)</h3>
+                <p>Coming Soon</p>
+            </div>
+            <div class="project-item">
+                <h3>Project 5: (Empty Slot)</h3>
+                <p>Coming Soon</p>
+            </div>
         </div>
         
         <div class="projects">
@@ -142,23 +154,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function prevSlide(id) {
-            let images = document.querySelectorAll(`#${id}`);
-            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-            images[activeIndex].classList.remove('active');
-            let newIndex = (activeIndex - 1 + images.length) % images.length;
-            images[newIndex].classList.add('active');
-        }
-        
-        function nextSlide(id) {
-            let images = document.querySelectorAll(`#${id}`);
-            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-            images[activeIndex].classList.remove('active');
-            let newIndex = (activeIndex + 1) % images.length;
-            images[newIndex].classList.add('active');
-        }
-    </script>
 </body>
 </html>
